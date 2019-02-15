@@ -1,14 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    include partial for head section here...
+    <% include ./partials/head.ejs %>
   </head>
 
-  <body>
-    <header>
-      <h1>Real Shopping</h1>
-      <h3>Where people shop together in real-time.</h3>
-      <h3>Join Us!</h3>
+  <body class="w3-animate-opacity">
+    <div class="fixed-top">
+    <% include ./partials/navbar.ejs %>
+
+    <header class="jumbotron">
+      <div class="download">
+        <p>Download our app today and start shopping with friends and family!</p>
+        <p>Compatible with Android and iOS Devices.</p>
+        <button>Download App</button>
+      </div>
+      <div class="main">
+        <div>
+          <h1>Real Shopping</h1>
+        </div>
+        <div class="fillers">
+          <h4>Where people shop together in real-time.</h4>
+          <h4>Join Us!</h4>
+        </div>
+      </div>
+      <div class="features">
+        <p>Live updates.</p>
+        <p>Instant selections.</p>
+        <p>Knock out that grocery list in seconds.</p>
+      </div>
     </header>
+  </div>
+
+    <div class="images">
+      <div class="row">
+        <img src="/images/chicken-3763827_1280.jpg" alt="pic">
+        <img src="/images/dessert-352475_1280.jpg" alt="pic">
+        <img src="/images/farmers-1311017_1280.jpg" alt="pic">
+        <img src="/images/ice-cream-410330_1280.jpg" alt="pic">
+        <img src="/images/leg-2815830_1280.jpg" alt="pic">
+      </div>
+
+      <div class="row">
+        <img src="/images/pick-and-mix-171342_1280.jpg" alt="pic">
+        <img src="/images/spices-1626385_1280.jpg" alt="pic">
+        <img src="/images/sugar-3485430_1280.jpg" alt="pic">
+        <img src="/images/vegetables-140917_1280.jpg" alt="pic">
+
+      </div>
+    </div>
   </body>
 </html>

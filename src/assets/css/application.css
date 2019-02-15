@@ -1,0 +1,51 @@
+body {
+  padding-top: 350px;
+}
+
+.navbar {
+  margin-top: 40px;
+}
+
+.custom-brand a {
+  padding: 20px 20px;
+  border-radius: 100%;
+  background: radial-gradient(farthest-side at 50% 50%,aqua,white);
+}
+
+.jumbotron {
+/*border: 3px solid yellow;*/
+  background: linear-gradient(to top, transparent, 10%, aqua, 90%, transparent);
+  /*margin-top: 80px;*/
+  display: flex;
+  justify-content: space-around;
+}
+
+.jumbotron div {
+  text-align: center;
+}
+
+.title {
+  padding-bottom: 30px;
+}
+
+.download {
+  /*border: 3px solid green;*/
+  width: 25%;
+}
+
+.features {
+  /*border: 3px solid white;*/
+  width: 25%;
+}
+
+.images div {
+  display: flex;
+  justify-content: space-around;
+}
+
+.images img {
+  border-radius: 20%;
+  width: 30%;
+  height: 30%;
+  margin: 10px 10px;
+}

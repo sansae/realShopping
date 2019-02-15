@@ -4,7 +4,7 @@
   "description": "A grocery list web app that can be shared in real-time by multiple people.",
   "main": "src/server.js",
   "scripts": {
-    "start": "node src/server.js",
+    "start": "nodemon ./bin/www",
     "test": "export NODE_ENV=test && jasmine"
   },
   "keywords": [],
@@ -19,6 +19,7 @@
     "dotenv": "^6.2.0",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
+    "nodemon": "^1.18.10",
     "pg": "^7.8.0",
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.42.0"
