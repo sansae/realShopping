@@ -21,7 +21,7 @@ module.exports = {
         type: Sequelize.REAL
       },
       userId: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.INTEGER,
       },
       createdAt: {

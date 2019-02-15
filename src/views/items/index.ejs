@@ -26,8 +26,15 @@
         <div class="col-xs-6" id="collaborator-user">
           <h4>Fruit</h4>
 
+          <% console.log('hi world') %>
           <form action="" method="post">
-            
+            <% items.forEach((item) => { %>
+              <ul class="list-group">
+                <li class="list-group-item">
+                  <button type="submit" name="btn" value="<%= user.id %>">Add</button> <%= item.name %>
+                </li>
+              </ul>
+            <% }) %>
           </form>
         </div>
       </div>
