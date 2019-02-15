@@ -20,22 +20,69 @@
     </div>
 
     <div class="jumbotron select w3-animate-right">
-      <p>Select Items</p>
+      <div class="header">
+        <h4>Select Items</h4>
+      </div>
 
-      <div class="row" id="collaborator">
-        <div class="col-xs-6" id="collaborator-user">
-          <h4>Fruit</h4>
+      <div class="row display">
+        <div class="fruit">
+          <p>Fruit</p>
+          <% items.forEach((item) => { %>
+            <% if (item.category === "Fruit") { %>
+              <form action="" method="post">
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <button type="submit" name="btn" value="<%= item.id %>">Add</button> <%= item.name %>
+                  </li>
+                </ul>
+              </form>
+            <% } %>
+          <% }) %>
+        </div>
 
-          <% console.log('hi world') %>
-          <form action="" method="post">
-            <% items.forEach((item) => { %>
-              <ul class="list-group">
-                <li class="list-group-item">
-                  <button type="submit" name="btn" value="<%= user.id %>">Add</button> <%= item.name %>
-                </li>
-              </ul>
-            <% }) %>
-          </form>
+        <div class="meat">
+          <p>Meat</p>
+          <% items.forEach((item) => { %>
+            <% if (item.category === "Meat") { %>
+              <form action="" method="post">
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <button type="submit" name="btn" value="<%= item.id %>">Add</button> <%= item.name %>
+                  </li>
+                </ul>
+              </form>
+            <% } %>
+          <% }) %>
+        </div>
+
+        <div class="vegetable">
+          <p>Vegetable</p>
+          <% items.forEach((item) => { %>
+            <% if (item.category === "Vegetable") { %>
+              <form action="" method="post">
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <button type="submit" name="btn" value="<%= item.id %>">Add</button> <%= item.name %>
+                  </li>
+                </ul>
+              </form>
+            <% } %>
+          <% }) %>
+        </div>
+
+        <div class="candy">
+          <p>Candy</p>
+          <% items.forEach((item) => { %>
+            <% if (item.category === "Candy") { %>
+              <form action="" method="post">
+                <ul class="list-group">
+                  <li class="list-group-item">
+                    <button type="submit" name="btn" value="<%= item.id %>">Add</button> <%= item.name %>
+                  </li>
+                </ul>
+              </form>
+            <% } %>
+          <% }) %>
         </div>
       </div>
     </div>

@@ -55,5 +55,11 @@
 .select {
   background: white;
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
+}
+
+.display .items {
+  display: flex;
+  border: 3px solid red;
 }
