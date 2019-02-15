@@ -1,7 +1,3 @@
-body {
-  padding-top: 350px;
-}
-
 .navbar {
   margin-top: 40px;
 }
@@ -12,7 +8,7 @@ body {
   background: radial-gradient(farthest-side at 50% 50%,aqua,white);
 }
 
-.jumbotron {
+.home-jumbotron {
 /*border: 3px solid yellow;*/
   background: linear-gradient(to top, transparent, 10%, aqua, 90%, transparent);
   /*margin-top: 80px;*/
@@ -48,4 +44,16 @@ body {
   width: 30%;
   height: 30%;
   margin: 10px 10px;
+}
+
+.item-jumbotron {
+  background: linear-gradient(to top, transparent, 10%, aqua, 90%, transparent);
+  display: flex;
+  justify-content: space-around;
+}
+
+.select {
+  background: white;
+  display: flex;
+  justify-content: space-around;
 }
