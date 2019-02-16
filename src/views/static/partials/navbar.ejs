@@ -3,8 +3,17 @@
     <a href="/">Home</a>
     <a href="">About</a>
     <a href="/items">Items</a>
-    <a href="/users/signup">Sign up</a>
-    <a href="/users/signin">Log in</a>
+
+    <% if (currentUser) { %>
+      <a href="">My Profile <span>(<%= currentUser.username %> - <%= currentUser.role %> user)</span></a>
+      <a href="/users/signout">Sign out</a>
+    <% } else { %>
+      <a href="/users/signup">Sign up</a>
+      <a href="/users/signin">Sign in</a>
+    <% } %>
+
+    <!-- <a href="/users/signup">Sign up</a> -->
+    <!-- <a href="/users/signin">Log in</a> -->
     <p><% include ./messages.ejs %></p>
   </div>
 </nav>
