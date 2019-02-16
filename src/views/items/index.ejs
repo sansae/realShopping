@@ -109,14 +109,16 @@
 
         	<div class="tbody">
             <% allCartItems.forEach((item) => { %>
-        		  <form class="tr" action="/carts/<%= item.id %>/update" method="POST">
+        		  <form class="tr" method="POST">
                 <div class="td"><%= item.id %></div>
                 <div class="td"><%= item.name %></div>
                 <div class="td"><%= item.category %></div>
                 <div class="td"><%= item.price %></div>
                 <input type="text" name="itemQuantity" value="<%= item.quantity %>" onkeypress="if (event.keyCode >= 48 && event.keyCode <= 57) {return true} else {return false}">
 
-                <div class="td action"><button type="submit" name="btn" value="<%= item.id %>">edit</button></div>
+                <div class="td action"><button type="submit" name="btn" value="<%= item.id %>" formaction="/carts/<%= item.id %>/update">edit</button></div>
+
+                <div class="td action"><button type="submit" name="btn" value="<%= item.id %>" formaction="/carts/<%= item.id %>/destroy">delete</button></div>
               </form>
             <% }) %>
         	</div>

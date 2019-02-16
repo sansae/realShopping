@@ -15,6 +15,21 @@ module.exports = {
     .catch((err) => {
       req.flash("notice", err);
       res.redirect(`/`);
-    })
+    });
   },
+
+  destroy(req, res, next) {
+    Cart.findById(req.params.id)
+    .then((cartItem) => {
+      cartItem.destroy()
+      .then(() => {
+        req.flash("notice", "The item has been removed from your cart.");
+        res.redirect('back');
+      })
+    })
+    .catch((err) => {
+      req.flash("notice", err);
+      res.redirect('/');
+    });
+  }
 }
