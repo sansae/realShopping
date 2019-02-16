@@ -13,9 +13,7 @@
 }
 
 .home-jumbotron {
-/*border: 3px solid yellow;*/
   background: linear-gradient(to top, transparent, 10%, aqua, 90%, transparent);
-  /*margin-top: 80px;*/
   display: flex;
   justify-content: space-around;
 }
@@ -29,12 +27,10 @@
 }
 
 .download {
-  /*border: 3px solid green;*/
   width: 25%;
 }
 
 .features {
-  /*border: 3px solid white;*/
   width: 25%;
 }
 
@@ -113,4 +109,13 @@
 	display: table-cell;
 	border: 1px solid black;
 	padding: 1px;
+}
+
+.tbody .tr .td {
+  padding: 5px 5px;
+}
+
+.tbody .tr input {
+  text-align: center;
+  height: 40px;
 }

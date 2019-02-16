@@ -104,6 +104,7 @@
         			<div class="td">Price/Unit</div>
         			<div class="td">Quantity</div>
         			<div class="td"></div>
+        			<div class="td"></div>
         		</div>
         	</div>
 
@@ -114,7 +115,7 @@
                 <div class="td"><%= item.name %></div>
                 <div class="td"><%= item.category %></div>
                 <div class="td"><%= item.price %></div>
-                <input type="text" name="itemQuantity" value="<%= item.quantity %>" onkeypress="if (event.keyCode >= 48 && event.keyCode <= 57) {return true} else {return false}">
+                <input type="text" name="itemQuantity" value="<%= item.quantity %>" onkeypress="if (event.keyCode >= 48 && event.keyCode <= 57) {return true} else {return false}" size="6">
 
                 <div class="td action"><button type="submit" name="btn" value="<%= item.id %>" formaction="/carts/<%= item.id %>/update">edit</button></div>
 
