@@ -98,7 +98,6 @@
         <div class="table">
         	<div class="thead">
         		<div class="tr">
-        			<div class="td">Id</div>
         			<div class="td">Name</div>
         			<div class="td">Category</div>
         			<div class="td">Price/Unit</div>
@@ -111,7 +110,6 @@
         	<div class="tbody">
             <% allCartItems.forEach((item) => { %>
         		  <form class="tr" method="POST">
-                <div class="td"><%= item.id %></div>
                 <div class="td"><%= item.name %></div>
                 <div class="td"><%= item.category %></div>
                 <div class="td"><%= item.price %></div>
