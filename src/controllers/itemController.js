@@ -1,11 +1,20 @@
 const Item = require("../db/models").Item;
+const Cart = require("../db/models").Cart;
 const itemQueries = require("../db/queries.items.js");
 
 module.exports = {
   index(req, res, next) {
+
     Item.findAll()
     .then((items) => {
-      res.render("items/index", {items});
+      let allItems = items;
+
+      Cart.findAll()
+      .then((cartItems) => {
+        let allCartItems = cartItems
+
+        res.render("items/index", {allItems, allCartItems});
+      })
     })
   },
 
@@ -18,15 +27,20 @@ module.exports = {
         price: item.price
       };
 
-      itemQueries.addItem(newItem, (err, item) => {
-        if (err) {
-          req.flash("notice", err);
-          res.redirect(`/items/index`);
-        } else {
-          req.flash("notice", "Item added!");
-          res.redirect(`/items/index`);
-        }
-      });
-    });
+      console.log(`${JSON.stringify(newItem)}`);
+      Cart.create({
+        name: newItem.name,
+        category: newItem.category,
+        price: newItem.price
+      })
+      .then((newCartItem) => {
+        req.flash("notice", `${newCartItem.name} was added!`);
+        res.redirect(`/`);
+      })
+    })
+    .catch((err) => {
+      req.flash("notice", err);
+      res.redirect(`/`);
+    })
   }
 }

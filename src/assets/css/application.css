@@ -53,6 +53,7 @@
 .item-jumbotron {
   background: linear-gradient(to top, transparent, 10%, aqua, 90%, transparent);
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
 }
 
@@ -61,9 +62,49 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  margin
+}
+
+.select-div {
+  /*border: 3px solid red;*/
+  display: flex;
+  flex-direction: column;
+  /*justify-content:center;*/
+
 }
 
 .display .items {
   display: flex;
-  border: 3px solid red;
+  /*border: 3px solid red;*/
+}
+
+.cart-div {
+  margin: 0 auto;
+}
+
+.cart-table {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 60%;
+}
+
+.cart-table td, .cart-table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.cart-table tr:nth-child(even){
+  background-color: white;
+}
+
+.cart-table tr:hover {
+  background-color: #ddd;
+}
+
+.cart-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: aqua;
+  color: black;
 }

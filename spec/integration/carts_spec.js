@@ -27,6 +27,7 @@ describe("routes : carts", () => {
         })
         .then((cart) => {
           this.cart = cart;
+          done();
         })
         .catch((err) => {
           console.log(err);
@@ -39,7 +40,7 @@ describe("routes : carts", () => {
   describe("POST /items/:itemId/create", () => {
     it("should add new item to the cart", (done) => {
       const options = {
-        url: `${base}cart/${this.cart.id}/create`,
+        url: `${base}item/${this.item.id}/create`,
         form: {
           name: this.item.name,
           category: this.item.category,
