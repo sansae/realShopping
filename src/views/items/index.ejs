@@ -29,7 +29,7 @@
           <p>Fruit</p>
           <% items.forEach((item) => { %>
             <% if (item.category === "Fruit") { %>
-              <form action="" method="post">
+              <form action="/items/<%= item.id %>/create" method="post">
                 <ul class="list-group">
                   <li class="list-group-item">
                     <button type="submit" name="btn" value="<%= item.id %>">Add</button> <%= item.name %>

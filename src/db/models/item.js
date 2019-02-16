@@ -13,10 +13,6 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.REAL,
       allowNull: false,
     },
-    userId: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
   }, {});
   Item.associate = function(models) {
     Item.belongsTo(models.User, {

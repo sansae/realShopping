@@ -20,11 +20,6 @@ module.exports = {
         allowNull: false,
         type: Sequelize.REAL
       },
-      userId: {
-        allowNull: true,
-        defaultValue: null,
-        type: Sequelize.INTEGER,
-      },
       createdAt: {
         allowNull: true,
         defaultValue: null,
