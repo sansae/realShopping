@@ -24,6 +24,7 @@ describe("routes : carts", () => {
           name: this.item.name,
           category: this.item.category,
           price: this.item.price,
+          quantity: 1
         })
         .then((cart) => {
           this.cart = cart;
@@ -40,22 +41,22 @@ describe("routes : carts", () => {
   describe("POST /items/:itemId/create", () => {
     it("should add new item to the cart", (done) => {
       const options = {
-        url: `${base}item/${this.item.id}/create`,
+        url: `${base}items/${this.item.id}/create`,
         form: {
-          name: this.item.name,
-          category: this.item.category,
-          price: this.item.price,
+          name: 'mamba',
+          category: 'Candy',
+          price: .75,
         }
       };
 
       request.post(options, (err, res, body) => {
         Cart.findOne({
-          where: { name: "rose" }
+          where: { name: "mamba" }
         })
         .then((item) => {
           expect(item).not.toBeNull();
-          expect(item.name).toBe("rose");
-          expect(item.id).not.toBeNull();
+          expect(item.name).toBe("mamba");
+          expect(item.id).toBe(2);
           done();
         })
         .catch((err) => {

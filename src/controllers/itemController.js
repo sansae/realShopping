@@ -27,15 +27,42 @@ module.exports = {
         price: item.price
       };
 
-      console.log(`${JSON.stringify(newItem)}`);
-      Cart.create({
-        name: newItem.name,
-        category: newItem.category,
-        price: newItem.price
-      })
-      .then((newCartItem) => {
-        req.flash("notice", `${newCartItem.name} was added!`);
-        res.redirect(`/`);
+      var itemExists = false;
+
+      Cart.findAll()
+      .then((cartItems) => {
+        for (let i = 0; i < cartItems.length; i++) {
+          if (item.name === cartItems[i].name) {
+            itemExists = true;
+            break
+          }
+        }
+
+        if (itemExists) {
+          Cart.find({
+            where: { name: item.name }
+          })
+          .then((cartItem) => {
+            cartItem.update({
+              quantity: cartItem.quantity + 1
+            })
+            .then((updatedCartItem) => {
+              req.flash("notice", `${cartItem.name} was added again! You now have ${updatedCartItem.quantity} in your cart.`);
+              res.redirect(`/`);
+            })
+          })
+        } else {
+          Cart.create({
+            name: newItem.name,
+            category: newItem.category,
+            price: newItem.price,
+            quantity: 1
+          })
+          .then((newCartItem) => {
+            req.flash("notice", `${newCartItem.name} was added!`);
+            res.redirect(`/`);
+          })
+        }
       })
     })
     .catch((err) => {

@@ -18,7 +18,8 @@ module.exports = {
         type: Sequelize.REAL
       },
       quantity: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        defaultValue: 0
       },
       createdAt: {
         allowNull: false,
