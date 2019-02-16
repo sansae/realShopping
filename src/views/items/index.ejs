@@ -95,23 +95,31 @@
           <p>Your Shopping Cart</p>
         </div>
 
-        <div>
-          <table class="cart-table">
-            <tr>
-              <th>Name</th>
-              <th>Category</th>
-              <th>Price</th>
-              <th>Quantity</th>
-            </tr>
+        <div class="table">
+        	<div class="thead">
+        		<div class="tr">
+        			<div class="td">Id</div>
+        			<div class="td">Name</div>
+        			<div class="td">Category</div>
+        			<div class="td">Price/Unit</div>
+        			<div class="td">Quantity</div>
+        			<div class="td"></div>
+        		</div>
+        	</div>
+
+        	<div class="tbody">
             <% allCartItems.forEach((item) => { %>
-              <tr class="item-data">
-                <td><%= item.name %></td>
-                <td><%= item.category %></td>
-                <td><%= item.price %></td>
-                <td class="content-editable"><div contenteditable="true" onkeypress="if (event.keyCode >= 48 && event.keyCode <= 57) {return true} else {return false}"><%= item.quantity %></div></td>
-              </tr>
+        		  <form class="tr" action="/carts/<%= item.id %>/update" method="POST">
+                <div class="td"><%= item.id %></div>
+                <div class="td"><%= item.name %></div>
+                <div class="td"><%= item.category %></div>
+                <div class="td"><%= item.price %></div>
+                <input type="text" name="itemQuantity" value="<%= item.quantity %>" onkeypress="if (event.keyCode >= 48 && event.keyCode <= 57) {return true} else {return false}">
+
+                <div class="td action"><button type="submit" name="btn" value="<%= item.id %>">edit</button></div>
+              </form>
             <% }) %>
-          </table>
+        	</div>
         </div>
       </div>
     </div>

@@ -69,5 +69,5 @@ module.exports = {
       req.flash("notice", err);
       res.redirect(`/`);
     })
-  }
+  },// end create
 }
