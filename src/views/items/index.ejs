@@ -104,11 +104,11 @@
               <th>Quantity</th>
             </tr>
             <% allCartItems.forEach((item) => { %>
-              <tr>
+              <tr class="item-data">
                 <td><%= item.name %></td>
                 <td><%= item.category %></td>
                 <td><%= item.price %></td>
-                <td><%= item.quantity %></td>
+                <td class="content-editable"><div contenteditable="true"><%= item.quantity %></div></td>
               </tr>
             <% }) %>
           </table>

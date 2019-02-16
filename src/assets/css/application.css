@@ -108,3 +108,8 @@
   background-color: aqua;
   color: black;
 }
+
+.item-data .content-editable:hover {
+  cursor: pointer;
+  background: darkgrey;
+}
