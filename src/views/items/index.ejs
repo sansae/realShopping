@@ -108,7 +108,7 @@
                 <td><%= item.name %></td>
                 <td><%= item.category %></td>
                 <td><%= item.price %></td>
-                <td class="content-editable"><div contenteditable="true"><%= item.quantity %></div></td>
+                <td class="content-editable"><div contenteditable="true" onkeypress="if (event.keyCode >= 48 && event.keyCode <= 57) {return true} else {return false}"><%= item.quantity %></div></td>
               </tr>
             <% }) %>
           </table>
