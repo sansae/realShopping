@@ -45,7 +45,7 @@
             <p>Meat</p>
             <% allItems.forEach((item) => { %>
               <% if (item.category === "Meat") { %>
-                <form action="" method="post">
+                <form action="/items/<%= item.id %>/create" method="post">
                   <ul class="list-group">
                     <li class="list-group-item">
                       <button type="submit" name="btn" value="<%= item.id %>">Add</button> <%= item.name %>
@@ -60,7 +60,7 @@
             <p>Vegetable</p>
             <% allItems.forEach((item) => { %>
               <% if (item.category === "Vegetable") { %>
-                <form action="" method="post">
+                <form action="/items/<%= item.id %>/create" method="post">
                   <ul class="list-group">
                     <li class="list-group-item">
                       <button type="submit" name="btn" value="<%= item.id %>">Add</button> <%= item.name %>
@@ -75,7 +75,7 @@
             <p>Candy</p>
             <% allItems.forEach((item) => { %>
               <% if (item.category === "Candy") { %>
-                <form action="" method="post">
+                <form action="/items/<%= item.id %>/create" method="post">
                   <ul class="list-group">
                     <li class="list-group-item">
                       <button type="submit" name="btn" value="<%= item.id %>">Add</button> <%= item.name %>
