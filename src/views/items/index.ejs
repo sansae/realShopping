@@ -19,8 +19,8 @@
       </header>
     </div>
 
-    <div class="jumbotron select w3-animate-right">
-      <div class="select-div">
+    <div class="jumbotron select">
+      <div class="select-div w3-animate-left">
         <div class="header">
           <h4>Select Items</h4>
         </div>
@@ -86,43 +86,44 @@
             <% }) %>
           </div>
         </div>
-      </div>
+      </div><!--end select items-->
+
+      <div class="jumbotron item-jumbotron w3-animate-right">
+        <div class="cart-div">
+          <div>
+            <p>Your Shopping Cart</p>
+          </div>
+
+          <div class="table">
+            <div class="thead">
+              <div class="tr">
+                <div class="td">Name</div>
+                <div class="td">Category</div>
+                <div class="td">Price/Unit</div>
+                <div class="td">Quantity</div>
+                <div class="td"></div>
+                <div class="td"></div>
+              </div>
+            </div>
+
+            <div class="tbody">
+              <% allCartItems.forEach((item) => { %>
+                <form class="tr" method="POST">
+                  <div class="td"><%= item.name %></div>
+                  <div class="td"><%= item.category %></div>
+                  <div class="td"><%= item.price %></div>
+                  <input type="text" name="itemQuantity" value="<%= item.quantity %>" onkeypress="if (event.keyCode >= 48 && event.keyCode <= 57) {return true} else {return false}" size="6">
+
+                  <div class="td action"><button type="submit" name="btn" value="<%= item.id %>" formaction="/carts/<%= item.id %>/update">edit</button></div>
+
+                  <div class="td action"><button type="submit" name="btn" value="<%= item.id %>" formaction="/carts/<%= item.id %>/destroy">delete</button></div>
+                </form>
+              <% }) %>
+            </div>
+          </div>
+        </div>
+      </div><!--end shopping cart display-->
     </div>
 
-    <div class="jumbotron item-jumbotron w3-animate-left">
-      <div class="cart-div">
-        <div>
-          <p>Your Shopping Cart</p>
-        </div>
-
-        <div class="table">
-        	<div class="thead">
-        		<div class="tr">
-        			<div class="td">Name</div>
-        			<div class="td">Category</div>
-        			<div class="td">Price/Unit</div>
-        			<div class="td">Quantity</div>
-        			<div class="td"></div>
-        			<div class="td"></div>
-        		</div>
-        	</div>
-
-        	<div class="tbody">
-            <% allCartItems.forEach((item) => { %>
-        		  <form class="tr" method="POST">
-                <div class="td"><%= item.name %></div>
-                <div class="td"><%= item.category %></div>
-                <div class="td"><%= item.price %></div>
-                <input type="text" name="itemQuantity" value="<%= item.quantity %>" onkeypress="if (event.keyCode >= 48 && event.keyCode <= 57) {return true} else {return false}" size="6">
-
-                <div class="td action"><button type="submit" name="btn" value="<%= item.id %>" formaction="/carts/<%= item.id %>/update">edit</button></div>
-
-                <div class="td action"><button type="submit" name="btn" value="<%= item.id %>" formaction="/carts/<%= item.id %>/destroy">delete</button></div>
-              </form>
-            <% }) %>
-        	</div>
-        </div>
-      </div>
-    </div>
   </body>
 </html>

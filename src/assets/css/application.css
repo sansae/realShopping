@@ -54,9 +54,10 @@
 }
 
 .select {
+  /*border: 3px solid red;*/
   background: white;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-around;
   margin
 }
@@ -64,10 +65,9 @@
 .select-div {
   display: flex;
   flex-direction: column;
-}
-
-.display .items {
-  display: flex;
+  background: linear-gradient(to top, transparent, 10%, aqua, 90%, transparent);
+  /*border: 3px solid yellow;*/
+  padding: 30px 30px;
 }
 
 .cart-div {
@@ -118,4 +118,19 @@
 .tbody .tr input {
   text-align: center;
   height: 40px;
+}
+
+.display {
+  display: flex;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 1406px) {
+  .select {
+    flex-direction: column;
+  }
+
+  .select-div {
+    margin-bottom: 50px;
+  }
 }
