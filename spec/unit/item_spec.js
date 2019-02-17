@@ -1,7 +1,7 @@
 const sequelize = require("../../src/db/models/index").sequelize;
-const User = require("../../src/db/models").User;
+const Item = require("../../src/db/models").Item;
 
-describe("User", () => {
+describe("Item", () => {
   beforeEach((done) => {
     sequelize.sync({force: true})
     .then(() => {
@@ -14,15 +14,15 @@ describe("User", () => {
   });
 
   describe("#create", () => {
-    it("should create a User object with a valid username, email, and password", (done) =>  {
-      User.create({
-        username: "user",
-        email: "user@example.com",
-        password: "1234567890"
+    it("should create a Item object with a valid name, category, and price", (done) =>  {
+      Item.create({
+        name: "pansy",
+        category: "Flower",
+        price: 3.00,
       })
-      .then((user) => {
-        expect(user.email).toBe("user@example.com");
-        expect(user.id).toBe(1);
+      .then((item) => {
+        expect(item.name).toBe("pansy");
+        expect(item.id).toBe(1);
         done();
       })
       .catch((err) => {

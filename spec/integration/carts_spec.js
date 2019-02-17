@@ -40,29 +40,37 @@ describe("routes : carts", () => {
 
   describe("POST /items/:itemId/create", () => {
     it("should add new item to the cart", (done) => {
-      const options = {
-        url: `${base}items/${this.item.id}/create`,
-        form: {
-          name: 'mamba',
-          category: 'Candy',
-          price: .75,
-        }
-      };
+      Item.create({
+        name: "lily",
+        category: "Flower",
+        price: 5.00
+      })
+      .then((item) => {
+        const options = {
+          url: `${base}items/${item.id}/create`,
+          form: {
+            name: item.name,
+            category: item.category,
+            price: item.price,
+            quantity: 1
+          }
+        };
 
-      request.post(options, (err, res, body) => {
-        Cart.findOne({
-          where: { name: "mamba" }
+        request.post(options, (err, res, body) => {
+          Cart.findOne({
+            where: { name: "lily" }
+          })
+          .then((item) => {
+            expect(item).not.toBeNull();
+            expect(item.name).toBe("lily");
+            expect(item.id).toBe(2);
+            done();
+          })
         })
-        .then((item) => {
-          expect(item).not.toBeNull();
-          expect(item.name).toBe("mamba");
-          expect(item.id).toBe(2);
-          done();
-        })
-        .catch((err) => {
-          console.log(err);
-          done();
-        });
+      })
+      .catch((err) => {
+        console.log(err);
+        done();
       });
     });
   });
