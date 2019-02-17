@@ -38,7 +38,7 @@ describe("routes : carts", () => {
     });
   });// end beforeEach
 
-  describe("POST /items/:itemId/create", () => {
+  describe("POST /carts/:itemId/create", () => {
     it("should add new item to the cart", (done) => {
       Item.create({
         name: "lily",
@@ -47,7 +47,7 @@ describe("routes : carts", () => {
       })
       .then((item) => {
         const options = {
-          url: `${base}items/${item.id}/create`,
+          url: `${base}carts/${item.id}/create`,
           form: {
             name: item.name,
             category: item.category,
