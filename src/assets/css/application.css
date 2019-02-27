@@ -124,6 +124,7 @@
 .signup-form, .signin-form {
   padding: 40px;
   background: linear-gradient(to top, transparent, 10%, aqua, 90%, transparent);
+  box-shadow: 0 0 50px 10px aqua;
 }
 
 @media only screen and (max-width: 1406px) {
