@@ -49,6 +49,7 @@ $ npm test spec/unit/<name-of-spec-test>
 ## Upcoming Features
 
 * Implement chat messenger
+* Add react for the front-end
 
 ## Authors
 
