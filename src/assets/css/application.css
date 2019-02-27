@@ -121,6 +121,11 @@
   margin: 0 auto;
 }
 
+.signup-form, .signin-form {
+  padding: 40px;
+  background: linear-gradient(to top, transparent, 10%, aqua, 90%, transparent);
+}
+
 @media only screen and (max-width: 1406px) {
   .select {
     flex-direction: column;
